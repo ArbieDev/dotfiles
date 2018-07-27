@@ -129,9 +129,10 @@ module.exports = {
     },
     css: `
       .terms_terms{
-        background-image:url("https://images.unsplash.com/photo-1506361797048-46a149213205?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=493e200df17b54d1ef10eb61e1df148a&auto=format&fit=crop&w=2850&q=80");
+        // background-image:url("https://images.unsplash.com/photo-1506361797048-46a149213205?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=493e200df17b54d1ef10eb61e1df148a&auto=format&fit=crop&w=2850&q=80");
+        background-image:url("https://wallpaperclicker.com/storage/wallpaper/COOL-WALLPAPER-7037-21909636.jpg");
         background-size: cover;
-        background-position: right bottom;
+        background-position: left bottom;
         background-repeat: no-repeat;
       };
       .terms_termGroup {
