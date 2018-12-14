@@ -2,17 +2,30 @@
 // which will not automatically be merged into this file.
 // See https://hyper.is#cfg for all currently supported options.
 
+/* WALLPAPER URL */
+const imgUrls = [
+  'https://images.unsplash.com/photo-1515343895725-52dc80cd209e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5f3f9b088279681b05e4bc3f52c2a21c&auto=format&fit=crop≠&w=2850&q=80',
+  'https://wallpaperclicker.com/storage/wallpaper/COOL-WALLPAPER-7037-21909636.jpg',
+  'https://wallpapershome.com/images/pages/pic_h/8540.jpg',
+  'https://wallpapershome.com/images/pages/pic_h/672.jpg',
+  'https://wallpaperbrowse.com/media/images/303836.jpg'
+  // 'https://images.unsplash.com/photo-1506361797048-46a149213205?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=493e200df17b54d1ef10eb61e1df148a&auto=format&fit=crop&w=2850&q=80',
+  // 'https://wallpapershome.com/images/pages/pic_h/4632.jpg',
+  // 'https://wallpapershome.com/images/pages/pic_h/4432.jpg','
+];
+const imgUrl = imgUrls[Math.floor(Math.random() * (imgUrls.length + 1))];
+
 module.exports = {
   config: {
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
     updateChannel: 'stable',
-
     // default font size in pixels for all tabs
-    fontSize: 16,
+    fontSize: 18,
 
     // font family with optional fallbacks
-    fontFamily: '"MesloLGM Nerd Font", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily:
+      '"ShureTechMono Nerd Font", "MesloLGM Nerd Font", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -37,8 +50,7 @@ module.exports = {
 
     // terminal background color
     // opacity is only supported on macOS
-    // backgroundColor: 'rgba(0,0,0,0.5)',
-    // backgroundColor: 'rgba(0,0,0,1)',
+    backgroundColor: 'rgba(0,0,0,0.5)',
 
     // terminal selection color
     selectionColor: 'rgba(255,255,255,0.2)',
@@ -47,7 +59,18 @@ module.exports = {
     borderColor: 'rgba(255,255,255,0.8)',
 
     // custom CSS to embed in the main window
-    css: '',
+    css: `
+      .terms_terms {
+        background-image:url("${imgUrl ||
+          'https://wallpaperbrowse.com/media/images/303836.jpg'}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      };
+      .terms_termGroup {
+        background: rgba(0,0,0,0.7) !important;
+      }
+    `,
 
     // custom CSS to embed in the terminal window
     termCSS: '',
@@ -83,7 +106,7 @@ module.exports = {
       lightBlue: '#6A76FB',
       lightMagenta: '#FD7CFC',
       lightCyan: '#68FDFE',
-      lightWhite: '#FFFFFF',
+      lightWhite: '#FFFFFF'
     },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
@@ -126,19 +149,7 @@ module.exports = {
     // for advanced config flags please refer to https://hyper.is/#cfg
     hypercwd: {
       initialWorkingDirectory: '~'
-    },
-    css: `
-      .terms_terms{
-        // background-image:url("https://images.unsplash.com/photo-1506361797048-46a149213205?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=493e200df17b54d1ef10eb61e1df148a&auto=format&fit=crop&w=2850&q=80");
-        background-image:url("https://wallpaperclicker.com/storage/wallpaper/COOL-WALLPAPER-7037-21909636.jpg");
-        background-size: cover;
-        background-position: left bottom;
-        background-repeat: no-repeat;
-      };
-      .terms_termGroup {
-        background: rgba(0,0,0,0.5) !important;
-      }
-    `,
+    }
   },
 
   // a list of plugins to fetch and install from npm
@@ -157,5 +168,5 @@ module.exports = {
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
-  },
+  }
 };
